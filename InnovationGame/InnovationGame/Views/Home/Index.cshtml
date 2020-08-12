@@ -1,0 +1,71 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+<html>
+    <head>
+        <style>
+            .actions {
+                display: flex;
+                justify-content: flex-end;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="container">
+            <form>
+                <h4>Dados da compra:</h4>
+
+                <div class="text-center mt-3">
+                    <img src="https://image.freepik.com/fotos-gratis/gotas-de-oleo-na-imagem-abstrata-padrao-psicodelico-de-agua_23-2148290141.jpg" width="150" height="150" />
+                </div>
+
+                <div class="text-center">
+                    <label id="productName">Teste de produto</label>
+                </div>
+
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-12 col-sm-2">
+                            <label for="quantidade">Quantidade</label>
+                            <input type="number" class="form-control" id="quantidade">
+                        </div>
+
+                        <div class="col-12 col-sm-10">
+                            <label for="endereco">Endereço</label>
+                            <input type="text" class="form-control" id="endereco">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-12 col-sm-6">
+                            <label for="numeroCartao">Cartão</label>
+                            <input type="text" class="form-control" id="numeroCartao">
+                        </div>
+
+                        <div class="col-12 col-sm-3">
+                            <label for="dataValidade">Validade</label>
+                            <input type="text" class="form-control" id="dataValidade">
+                        </div>
+
+                        <div class="col-12 col-sm-3">
+                            <label for="cvv">CVV</label>
+                            <input type="text" class="form-control" id="cvv">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-4 mb-5 actions">
+                    <button id="submit" type="submit" class="btn btn-primary">Avançar</button>
+                </div>
+
+            </form>
+        </div>
+    </body>
+</html>
+
+<script type="text/javascript">
+</script>
+
