@@ -1,3 +1,4 @@
+using InnovationGame.Ioc;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -18,6 +19,8 @@ namespace InnovationGame
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            services.AdicionarDependenciaServicos();
+            services.AdicionarDependenciaRepositorios();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
