@@ -1,6 +1,7 @@
 ﻿using InnovationGame.Servico.Interfaces;
 using InnovationGame.ViewModels;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Routing;
 using System;
 
 namespace InnovationGame.Controllers
@@ -18,9 +19,16 @@ namespace InnovationGame.Controllers
             return View();
         }
 
-        public IActionResult Detalhes()
+        [HttpGet]
+        public IActionResult Detalhes(CarrinhoModel model)
+        
         {
-            return View();
+            model.Id = 1;
+            model.NumeroCartao = "12151511";
+            model.Quantidade = 1;
+            model.Endereco = "aaa";
+            model.DataValidade = "06/2022";
+            return View(model);
         }
 
         public IActionResult PedidoConfirmado()
@@ -29,11 +37,11 @@ namespace InnovationGame.Controllers
         }
 
         [HttpPost]
-        public IActionResult ConfirmarCompra(CarrinhoModel carrinho)
+        public IActionResult ConfirmarCompra(CarrinhoModel model)
         {
             try
             {
-                //_carrinhoServico.Salvar(carrinho);
+                //_carrinhoServico.Salvar(model);
                 return new JsonResult("");
             }
             catch (Exception ex)

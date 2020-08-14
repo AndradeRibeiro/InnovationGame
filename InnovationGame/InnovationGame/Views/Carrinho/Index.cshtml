@@ -12,16 +12,16 @@
     </head>
 
     <body>
-        <div class="container">
+        <div class="container mt-5">
             <form>
                 <h4>Dados da compra:</h4>
 
                 <div class="text-center mt-3">
-                    @*<img src="@Model.Produto.Foto" width="150" height="150" />*@
+                    <img src="https://www.confianca.com.br/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/r/e/refrigerante-guarana-antarctica-lata-350ml_1.jpg" width="200" height="200" />
                 </div>
 
-                <div class="text-center">
-                    @*<label id="productName">@Model.Produto.Nome</label>*@
+                <div class="text-center mt-3 mb-4">
+                    <label>Descrevendo o produto aqui</label>
                 </div>
 
                 <div class="form-group">
@@ -31,9 +31,14 @@
                             <input type="number" class="form-control" id="quantidade">
                         </div>
 
-                        <div class="col-12 col-sm-10">
+                        <div class="col-12 col-sm-8">
                             <label for="endereco">Endereço</label>
                             <input type="text" class="form-control" id="endereco">
+                        </div>
+
+                        <div class="col-12 col-sm-2">
+                            <label for="celular">Celular</label>
+                            <input type="text" class="form-control" id="celular">
                         </div>
                     </div>
                 </div>
@@ -51,17 +56,18 @@
                         </div>
 
                         <div class="col-12 col-sm-3">
-                            <label for="cvvCard">CVV</label>
-                            <input type="text" class="form-control" id="cvvCard">
+                            <label for="cardCvv">CVV</label>
+                            <input type="text" class="form-control" id="cardCvv">
                         </div>
                     </div>
                 </div>
 
                 <div class="mt-4 mb-5 actions">
-                    <button id="submit" class="btn btn-primary" onclick="proximo()">Avançar</button>
+                    <button id="submit" class="btn btn-warning" onclick="proximo()">Avançar</button>
                 </div>
 
             </form>
+        </div>
         </div>
     </body>
 </html>
@@ -69,16 +75,26 @@
 <script type="text/javascript">
 
     function proximo() {
-        console.log('ir para detalhes')
+        var carrinho = mapearObjeto();
+        $.ajax({
+            type: "GET",
+            url: '@Url.Action("Detalhes", "Carrinho")',
+            contentType: "application/json; charset=utf-8",
+            data: JSON.stringify(carrinho),
+            error: function () {
+                alert("Error while inserting data");
+            }
+        });
+        debugger;
     }
 
-    function mapearObjetoParaSalvar() {
+    function mapearObjeto() {
         var carrinho = {};
         carrinho.Quantidade = $("#quantidade").val();
         carrinho.Endereco = $("#endereco").val();
         carrinho.NumeroCartao = $("#numeroCartao").val();
         carrinho.DataValidade = $("#dataValidade").val();
-        //carrinho.CVV = ("#cvvCard").val();
+        //carrinho.CVV = ("#cardCvv").val();
         return carrinho;
     }
 
