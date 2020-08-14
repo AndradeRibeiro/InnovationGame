@@ -63,18 +63,29 @@
                 </div>
 
                 <div class="mt-4 mb-5 actions">
-                    <button id="submit" class="btn btn-warning" onclick="proximo()">Avançar</button>
+                    <button id="submit" class="btn btn-warning btn-lg" onclick="proximoPasso()">Avançar</button>
                 </div>
 
             </form>
-        </div>
         </div>
     </body>
 </html>
 
 <script type="text/javascript">
 
-    function proximo() {
+    function mapearObjeto() {
+        var carrinho = {};
+        //carrinho.ProdutoId = $("#produtoId").val();
+        //carrinho.Quantidade = $("#quantidade").val();
+        //carrinho.Endereco = $("#endereco").val();
+        //carrinho.NumeroCartao = $("#numeroCartao").val();
+        //carrinho.DataValidade = $("#dataValidade").val();
+        //carrinho.Celular = $("#celular").val();
+        //carrinho.CVV = ("#cvvCard").val();
+        return carrinho;
+    }
+
+    function proximoPasso() {
         var carrinho = mapearObjeto();
         $.ajax({
             type: "GET",
@@ -85,18 +96,8 @@
                 alert("Error while inserting data");
             }
         });
-        debugger;
     }
 
-    function mapearObjeto() {
-        var carrinho = {};
-        carrinho.Quantidade = $("#quantidade").val();
-        carrinho.Endereco = $("#endereco").val();
-        carrinho.NumeroCartao = $("#numeroCartao").val();
-        carrinho.DataValidade = $("#dataValidade").val();
-        //carrinho.CVV = ("#cardCvv").val();
-        return carrinho;
-    }
 
     //TESTE DO BANCO NO AZURE (Obter Todos)
     function obter() {
