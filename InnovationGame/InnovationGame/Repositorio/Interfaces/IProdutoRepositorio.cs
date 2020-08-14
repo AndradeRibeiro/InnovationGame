@@ -6,7 +6,7 @@ namespace InnovationGame.Repository.Interfaces
 {
     public interface IProdutoRepositorio
     {
-        IEnumerable<ProdutoViewModel> ObterTodos();
-        ProdutoViewModel ObterPorId(int id);
+        IEnumerable<ProdutoModel> ObterTodos();
+        ProdutoModel ObterPorId(int id);
     }
 }

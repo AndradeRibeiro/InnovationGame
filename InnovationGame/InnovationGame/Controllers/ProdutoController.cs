@@ -1,5 +1,6 @@
 ﻿using InnovationGame.Service.Interfaces;
 using Microsoft.AspNetCore.Mvc;
+using System;
 
 namespace InnovationGame.Controllers
 {
@@ -18,15 +19,31 @@ namespace InnovationGame.Controllers
         [HttpGet]
         public IActionResult ObterTodos()
         {
-            var listaProdutos = _produtoServico.ObterTodos();
-            return Ok(listaProdutos);
+            try
+            {
+                var listaProdutos = _produtoServico.ObterTodos();
+                return new JsonResult(listaProdutos);
+            }
+            catch (Exception ex)
+            {
+                return new JsonResult(ex.Message);
+            }
+
         }
 
-        [HttpGet("{produtoId}")]
+        [HttpGet]
         public IActionResult ObterPorId(int produtoId)
         {
-            var listaProdutos = _produtoServico.ObterPorId(produtoId);
-            return Ok(listaProdutos);
+            try
+            {
+                var produto = _produtoServico.ObterPorId(produtoId);
+                return new JsonResult(produto);
+            }
+            catch (Exception ex)
+            {
+                return new JsonResult(ex.Message);
+            }
+
         }
     }
 }

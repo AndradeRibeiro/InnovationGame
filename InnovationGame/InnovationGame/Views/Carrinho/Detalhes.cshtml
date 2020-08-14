@@ -1,0 +1,55 @@
+﻿@{
+    ViewData["Title"] = "Confirmação";
+}
+<html>
+    <head>
+        <style>
+            .actions {
+                display: flex;
+                justify-content: flex-end;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="container">
+            <h4>Dados da compra:</h4>
+            <label>Teste</label>
+            <label>Teste</label>
+            <label>Teste</label>
+            <label>Teste</label>
+            <button id="submit" type="submit" class="btn btn-primary" onclick="salvar()">Confirmar</button>
+        </div>
+    </body>
+</html>
+
+<script type="text/javascript">
+
+    function salvar() {
+        var carrinho = mapearObjetoParaSalvar();
+        $.ajax({
+            type: "POST",
+            url: '@Url.Action("ConfirmarCompra", "Carrinho")',
+            data: JSON.stringify(carrinho),
+            dataType: "json",
+            contentType: "application/json; charset=utf-8",
+            success: function () {
+                alert("Data has been added successfully.");
+            },
+            error: function () {
+                alert("Error while inserting data");
+            }
+        });
+    }
+
+    function mapearObjetoParaSalvar() {
+        var carrinho = {};
+        //carrinho.Quantidade = $("#quantidade").val();
+        //carrinho.Endereco = $("#endereco").val();
+        //carrinho.NumeroCartao = $("#numeroCartao").val();
+        //carrinho.DataValidade = $("#dataValidade").val();
+        //carrinho.CVV = ("#cvvCard").val();
+        return carrinho;
+    }
+
+</script>

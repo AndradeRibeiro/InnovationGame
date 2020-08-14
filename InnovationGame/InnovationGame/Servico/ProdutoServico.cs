@@ -13,8 +13,8 @@ namespace InnovationGame.Service
             _produtoRepositorio = produtoRepositorio;
         }
 
-        public ProdutoViewModel ObterPorId(int id) =>_produtoRepositorio.ObterPorId(id);
+        public ProdutoModel ObterPorId(int id) =>_produtoRepositorio.ObterPorId(id);
         
-        public IEnumerable<ProdutoViewModel> ObterTodos() => _produtoRepositorio.ObterTodos();
+        public IEnumerable<ProdutoModel> ObterTodos() => _produtoRepositorio.ObterTodos();
     }
 }

@@ -18,17 +18,17 @@ namespace InnovationGame.Repository
             _stringConexao = _configuration.GetConnectionString("DefaultConnection");
         }
 
-        public IEnumerable<ProdutoViewModel> ObterTodos()
+        public IEnumerable<ProdutoModel> ObterTodos()
         {
             using SqlConnection conexao = new SqlConnection(_stringConexao);
-            return conexao.GetAll<ProdutoViewModel>();
+            return conexao.GetAll<ProdutoModel>();
         }
 
-        public ProdutoViewModel ObterPorId(int id)
+        public ProdutoModel ObterPorId(int id)
         {
             string sqlQuery = $"SELECT * FROM ambev.Produtos WHERE ProdutoId = {id}";
             using SqlConnection conexao = new SqlConnection(_stringConexao);
-            return conexao.QueryFirstOrDefault<ProdutoViewModel>(sqlQuery);
+            return conexao.QueryFirstOrDefault<ProdutoModel>(sqlQuery);
         }
     }
 }

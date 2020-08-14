@@ -1,11 +1,10 @@
 ﻿
 using Dapper.Contrib.Extensions;
-using System;
 
 namespace InnovationGame.ViewModels
 {
-    [System.ComponentModel.DataAnnotations.Schema.Table("ambev.Produtos")]
-    public class ProdutoViewModel
+    [Table("ambev.Produtos")]
+    public class ProdutoModel
     {
         [ExplicitKey]
         public int ProdutoId { get; set; }
