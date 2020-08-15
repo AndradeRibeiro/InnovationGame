@@ -18,7 +18,8 @@
 
     <body>
         <div>
-            <form>
+            <form method="post" action="Carrinho/ConfirmarCompra">
+                <input type="hidden" name="CodeId" value="@ViewData["CodeId"]" />
                 <div class="row" style="height: 135px; background-color: #F7F7F7;">
                     <div class="col-4 col-sm-2">
                         <div id="imagemProduto" class="text-center mt-3">
@@ -37,13 +38,13 @@
                     <div class="input-group" style="margin-left: 200px; width: 95px; margin-top: -45px;">
                         <span class="input-group-btn">
                             <button type="button" class="btn btn-danger btn-number" data-type="minus" data-field="quant[2]">
-                                <span class="glyphicon glyphicon-minus"></span>
+                                <span class="glyphicon glyphicon-minus" style="font-weight: bolder">-</span>
                             </button>
                         </span>
                         <input type="text" name="quant[2]" class="form-control input-number" value="1" min="1" max="100">
                         <span class="input-group-btn">
                             <button type="button" class="btn btn-success btn-number" data-type="plus" data-field="quant[2]">
-                                <span class="glyphicon glyphicon-plus"></span>
+                                <span class="glyphicon glyphicon-plus" style="font-weight: bolder">+</span>
                             </button>
                         </span>
                     </div>
@@ -52,26 +53,26 @@
                     <div class="row">
                         <div class="col-12 col-sm-10">
                             <label for="endereco">Endereço</label>
-                            <input type="text" class="form-control" id="endereco">
+                            <input type="text" class="form-control" id="endereco" name="Endereco" onchange="salvaCampo(this)">
                         </div>
                         <div class="col-6 col-sm-3">
                             <label for="numero">Número</label>
-                            <input type="text" class="form-control" id="numero">
+                            <input type="text" class="form-control" id="numero" name="Numero" onchange="salvaCampo(this)">
                         </div>
                         <div class="col-6 col-sm-3">
                             <label for="cep">Cep</label>
-                            <input type="text" class="form-control" id="cep">
+                            <input type="text" class="form-control" id="cep" name="CEP" onchange="salvaCampo(this)">
                         </div>
 
 
                         <div class="col-6 col-sm-3">
                             <label for="estado">Estado</label>
-                            <input type="text" class="form-control" id="estado">
+                            <input type="text" class="form-control" id="estado" name="Estado" onchange="salvaCampo(this)">
                         </div>
 
                         <div class="col-6 col-sm-3">
                             <label for="cidade">Cidade</label>
-                            <input type="text" class="form-control" id="cidade">
+                            <input type="text" class="form-control" id="cidade" name="Cidade" onchange="salvaCampo(this)">
                         </div>
                     </div>
                 </div>
@@ -79,22 +80,22 @@
                     <div class="row">
                         <div class="col-12 col-sm-4">
                             <label for="nome">Nome no cartão</label>
-                            <input type="text" class="form-control" id="nome">
+                            <input type="text" class="form-control" id="nome" name="NomeCartao"  onchange="salvaCampo(this)">
                         </div>
 
                         <div class="col-12 col-sm-4">
                             <label for="numeroCartao">Numero do cartão</label>
-                            <input type="text" class="form-control" id="numeroCartao">
+                            <input type="text" class="form-control" id="numeroCartao" name="CartaoCredito" onchange="salvaCampo(this)">
                         </div>
 
                         <div class="col-6 col-sm-2">
                             <label for="dataValidade">Validade</label>
-                            <input type="text" class="form-control" id="dataValidade">
+                            <input type="text" class="form-control" id="dataValidade" name="CartaoVencimento" onchange="salvaCampo(this)">
                         </div>
 
                         <div class="col-6 col-sm-2">
                             <label for="cardCvv">CVV</label>
-                            <input type="text" class="form-control" id="cardCvv">
+                            <input type="text" class="form-control" id="cardCvv" name="CartaoCVV">
                         </div>
                     </div>
                 </div>
@@ -102,12 +103,12 @@
                     <div class="row">
                         <div class="col-12 col-sm-2">
                             <label for="celular">Celular</label>
-                            <input type="text" class="form-control" id="celular">
+                            <input type="text" class="form-control" id="celular" name="Celular" onchange="salvaCampo(this)">
                         </div>
                     </div>
                 </div>
                 <div class="mt-4 mb-5 actions">
-                    <button id="submit" class="btn corBotao btn-lg" onclick="proximoPasso()">Avançar</button>
+                    <button id="submit" class="btn corBotao btn-lg" type="submit">Finalizar</button>
                 </div>
 
             </form>
@@ -117,31 +118,22 @@
 
 <script type="text/javascript">
 
-    $().ready(function () {
-
-        obterInformacoesUrl();
-        //obterProdutoPorId(1);
-    });
-
-    function mapearObjeto() {
-        var carrinho = {};
-        //carrinho.Celular = $().val("celular");
-        //carrinho.Endereco = $("#endereco").val();
-        //carrinho.Cidade = $("#cidade").val();
-        //carrinho.Estado = $("#estado").val();
-        //carrinho.Numero = $("#numero").val();
-        //carrinho.NomeCartao = $("#nome").val();
-        //carrinho.CartaoCredito = $("#numeroCartao").val();
-        //carrinho.CartaoVencimento = $("#dataValidade").val();
-        //carrinho.CartaoCVV = $("#cardCvv").val();
-        //carrinho.CodeId  = "";
-
-        //carrinho.Quantidade = $("#quantidade").val();
-        //carrinho.ProdutoId = "";
-        //carrinho.InfluenciadorId = "";
-        return carrinho;
+    function salvaCampo(campo) {
+        console.log(campo.name + ":" + campo.value);
+        localStorage[campo.name] = campo.value;
     }
 
+    $(function () {
+        $("#endereco").val(localStorage["Endereco"])
+        $("#numero").val(localStorage["Numero"])
+        $("#cep").val(localStorage["CEP"])
+        $("#cidade").val(localStorage["Cidade"])
+        $("#estado").val(localStorage["Estado"])
+        $("#nome").val(localStorage["NomeCartao"])
+        $("#numeroCartao").val(localStorage["CartaoCredito"])
+        $("#dataValidade").val(localStorage["CartaoVencimento"])
+        $("#celular").val(localStorage["Celular"])
+    })
 
     $('.btn-number').click(function (e) {
         e.preventDefault();
@@ -174,9 +166,11 @@
             input.val(0);
         }
     });
+
     $('.input-number').focusin(function () {
         $(this).data('oldValue', $(this).val());
     });
+
     $('.input-number').change(function () {
 
         minValue = parseInt($(this).attr('min'));
@@ -197,8 +191,8 @@
             $(this).val($(this).data('oldValue'));
         }
 
-
     });
+
     $(".input-number").keydown(function (e) {
         // Allow: backspace, delete, tab, escape, enter and .
         if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 190]) !== -1 ||

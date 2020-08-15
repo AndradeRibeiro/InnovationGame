@@ -7,7 +7,7 @@ namespace InnovationGame.ViewModels
     [Table("ambev.Compra")]
     public class Compra
     {
-        [ExplicitKey]
+        [Key]
         public int CompraId { get; set; }
         public string Endereco { get; set; }
         public string Numero { get; set; }

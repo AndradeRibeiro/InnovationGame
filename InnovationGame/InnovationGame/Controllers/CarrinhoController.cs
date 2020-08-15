@@ -10,10 +10,13 @@ namespace InnovationGame.Controllers
     {
         private readonly IProdutoServico _produtoServico;
         private readonly ICodeServico _codeServico;
-        public CarrinhoController(IProdutoServico produtoServico, ICodeServico codeServico)
+        private readonly ICarrinhoServico _carrinhoServico;
+
+        public CarrinhoController(IProdutoServico produtoServico, ICodeServico codeServico, ICarrinhoServico carrinhoServico)
         {
             _produtoServico = produtoServico;
             _codeServico = codeServico;
+            _carrinhoServico = carrinhoServico;
         }
 
         public IActionResult Index()
@@ -28,6 +31,7 @@ namespace InnovationGame.Controllers
                 ViewData["ProdutoNome"] = produto.Nome;
                 ViewData["ProdutoFoto"] = produto.Foto;
                 ViewData["ProdutoPreco"] = produto.Preco;
+                ViewData["CodeId"] = code.CodeId;
 
             } catch (Exception e)
             {
@@ -36,24 +40,15 @@ namespace InnovationGame.Controllers
             return View();
         }
 
-        [HttpGet]
-        public IActionResult Detalhes(Compra model)    
-        {
-            return View(model);
-        }
-
-        public IActionResult PedidoConfirmado()
-        {
-            return View();
-        }
-
         [HttpPost]
         public IActionResult ConfirmarCompra(Compra model)
         {
+            model.Timestamp = DateTime.Now;
+
             try
             {
-                //_carrinhoServico.Salvar(model);
-                return new JsonResult("");
+                _carrinhoServico.Salvar(model);
+                return View("/Views/Carrinho/PedidoConfirmado.cshtml");
             }
             catch (Exception ex)
             {
