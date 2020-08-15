@@ -1,4 +1,4 @@
-﻿@model InnovationGame.ViewModels.CarrinhoModel
+﻿@model InnovationGame.ViewModels.Compra
 @{
     ViewData["Title"] = "Confirmação";
 }
@@ -11,6 +11,11 @@
             }
             .bold {
                 font-weight: bold;
+            }
+            .corBotao {
+                background-color: #6342a6;
+                color: white;
+                border-color: #6342a6;
             }
         </style>
     </head>
@@ -29,6 +34,16 @@
                 <div class="text-center">
                     <label>Quant: 1</label>
                 </div>
+                <div class="text-center">
+                    <label>5,99</label>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12">
+                    <label class="bold">Celular: </label>
+                    <span>(16) 99999-9999</span>
+                </div>
             </div>
 
             <div class="row">
@@ -37,36 +52,67 @@
                     <span>Teste Teste Teste</span>
                 </div>
             </div>
+
             <div class="row">
                 <div class="col-12">
-                    <label class="bold">Celular: </label>
-                    <span>(16) 99999-9999</span>
+                    <label class="bold">Cep: </label>
+                    <span>Teste Teste Teste</span>
                 </div>
             </div>
+
+            <div class="row">
+                <div class="col-12">
+                    <label class="bold">Estado: </label>
+                    <span>Teste Teste Teste</span>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12">
+                    <label class="bold">Cidade: </label>
+                    <span>Teste Teste Teste</span>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12">
+                    <label class="bold">Número: </label>
+                    <span>1</span>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12">
+                    <label class="bold">Nome: </label>
+                    <span>Teste Teste Teste</span>
+                </div>
+            </div>
+
             <div class="row">
                 <div class="col-12">
                     <label class="bold">Cartão: </label>
                     <span>123456789123</span>
                 </div>
-
             </div>
+
             <div class="row">
                 <div class="col-12">
                     <label class="bold">Validade: </label>
                     <span>10/2022</span>
                 </div>
             </div>
+
             <div class="row">
                 <div class="col-12">
                     <label class="bold">CVV: </label>
                     <span>123</span>
                 </div>
             </div>
+        </div>
 
-            <div class="mt-5 mb-5 actions">
-                <button id="voltar" class="btn btn-light btn-lg mr-2" onclick="">Voltar</button>
-                <button id="submit" class="btn btn-warning btn-lg" onclick="salvar()">Confirmar</button>
-            </div>
+        <div class="mt-5 mb-5 actions">
+            <button id="voltar" class="btn btn-light btn-lg mr-2" onclick="">Voltar</button>
+            <button id="submit" class="btn corBotao btn-lg" onclick="salvar()">Confirmar</button>
         </div>
     </body>
 </html>

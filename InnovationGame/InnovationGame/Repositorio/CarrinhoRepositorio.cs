@@ -18,7 +18,7 @@ namespace InnovationGame.Repositorio
             _stringConexao = _configuration.GetConnectionString("DefaultConnection");
         }
 
-        public void Salvar(CarrinhoModel carrinho)
+        public void Salvar(Compra carrinho)
         {
             using SqlConnection conexao = new SqlConnection(_stringConexao);
             conexao.Insert(carrinho);

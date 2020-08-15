@@ -13,7 +13,7 @@ namespace InnovationGame.Servico
             _carrinhoRepositorio = carrinhoRepositorio;
         }
 
-        public void Salvar(CarrinhoModel carrinho)
+        public void Salvar(Compra carrinho)
         {
             _carrinhoRepositorio.Salvar(carrinho);
         }

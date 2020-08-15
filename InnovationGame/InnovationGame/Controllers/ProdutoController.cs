@@ -11,7 +11,8 @@ namespace InnovationGame.Controllers
         {
             _produtoServico = produtoServico;
         }
-        public IActionResult Index()
+
+        public IActionResult Index([FromRoute] int produtoId)
         {
             return View();
         }

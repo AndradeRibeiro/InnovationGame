@@ -1,7 +1,6 @@
 ﻿using InnovationGame.Servico.Interfaces;
 using InnovationGame.ViewModels;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Routing;
 using System;
 
 namespace InnovationGame.Controllers
@@ -20,14 +19,8 @@ namespace InnovationGame.Controllers
         }
 
         [HttpGet]
-        public IActionResult Detalhes(CarrinhoModel model)
-        
+        public IActionResult Detalhes(Compra model)    
         {
-            model.Id = 1;
-            model.NumeroCartao = "12151511";
-            model.Quantidade = 1;
-            model.Endereco = "aaa";
-            model.DataValidade = "06/2022";
             return View(model);
         }
 
@@ -37,7 +30,7 @@ namespace InnovationGame.Controllers
         }
 
         [HttpPost]
-        public IActionResult ConfirmarCompra(CarrinhoModel model)
+        public IActionResult ConfirmarCompra(Compra model)
         {
             try
             {

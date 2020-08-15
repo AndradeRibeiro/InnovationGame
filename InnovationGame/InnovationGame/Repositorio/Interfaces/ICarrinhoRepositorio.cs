@@ -5,6 +5,6 @@ namespace InnovationGame.Repositorio.Interfaces
 {
     public interface ICarrinhoRepositorio
     {
-        void Salvar(CarrinhoModel carrinho);
+        void Salvar(Compra carrinho);
     }
 }
