@@ -19,7 +19,7 @@ namespace InnovationGame.Controllers
         public IActionResult Index()
         {
 
-            try { 
+            try {
                 string codeId = Request.Query["CodeId"];
 
                 var code = _codeServico.ObterPorId(codeId);
