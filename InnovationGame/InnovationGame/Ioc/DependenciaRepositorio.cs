@@ -13,6 +13,7 @@ namespace InnovationGame.Ioc
         {
             servico.AddScoped<ICarrinhoRepositorio, CarrinhoRepositorio>();
             servico.AddScoped<IProdutoRepositorio, ProdutoRepositorio>();
+            servico.AddScoped<ICodeRepositorio, CodeRepositorio>();
         }
     }
 }

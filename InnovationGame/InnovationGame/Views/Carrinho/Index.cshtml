@@ -20,85 +20,94 @@
         <div class="container mt-5">
             <form>
                 <h4>Dados da compra:</h4>
-
-                <div id="imagemProduto" class="text-center mt-3"></div>
-
-                <div id="descricaoProduto" class="text-center mt-3 mb-1"></div>
-
-                <div id="precoProduto" class="text-center mb-4"></div>
-
-                <div class="form-group">
-                    <div class="row">
-                        <div class="col-12 col-sm-2">
-                            <label for="quantidade">Quantidade</label>
-                            <input type="number" class="form-control" id="quantidade">
-                        </div>
-
-                        <div class="col-12 col-sm-2">
-                            <label for="celular">Celular</label>
-                            <input type="text" class="form-control" id="celular">
-                        </div>
-
-                        <div class="col-12 col-sm-8">
-                            <label for="endereco">Endereço</label>
-                            <input type="text" class="form-control" id="endereco">
+                <div class="row">
+                    <div class="col-6 col-sm-2">
+                        <div id="imagemProduto" class="text-center mt-3">
+                            <img src="@ViewData["ProdutoFoto"]" />
                         </div>
                     </div>
-                </div>
-
-                <div class="form-group">
-                    <div class="row">
-                        <div class="col-6 col-sm-3">
-                            <label for="cep">Cep</label>
-                            <input type="text" class="form-control" id="cep">
+                    <div class="col-6 col-sm-2">
+                        <div id="descricaoProduto" class="text-center mt-3 mb-1">
+                            <label>@ViewData["ProdutoNome"]</label>
                         </div>
 
-                        <div class="col-6 col-sm-3">
-                            <label for="estado">Estado</label>
-                            <input type="text" class="form-control" id="estado">
-                        </div>
-
-                        <div class="col-6 col-sm-4">
-                            <label for="cidade">Cidade</label>
-                            <input type="text" class="form-control" id="cidade">
-                        </div>
-
-                        <div class="col-6 col-sm-2">
-                            <label for="numero">Número</label>
-                            <input type="text" class="form-control" id="numero">
+                        <div id="precoProduto" class="text-center mb-4">
+                            <label>@ViewData["ProdutoPreco"]</label>
                         </div>
                     </div>
-                </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-12 col-sm-2">
+                                <label for="quantidade">Quantidade</label>
+                                <input type="number" class="form-control" id="quantidade">
+                            </div>
 
-                <div class="form-group">
-                    <div class="row">
-                        <div class="col-12 col-sm-4">
-                            <label for="nome">Nome</label>
-                            <input type="text" class="form-control" id="nome">
-                        </div>
+                            <div class="col-12 col-sm-2">
+                                <label for="celular">Celular</label>
+                                <input type="text" class="form-control" id="celular">
+                            </div>
 
-                        <div class="col-12 col-sm-4">
-                            <label for="numeroCartao">Cartão</label>
-                            <input type="text" class="form-control" id="numeroCartao">
-                        </div>
-
-                        <div class="col-12 col-sm-2">
-                            <label for="dataValidade">Validade</label>
-                            <input type="text" class="form-control" id="dataValidade">
-                        </div>
-
-                        <div class="col-12 col-sm-2">
-                            <label for="cardCvv">CVV</label>
-                            <input type="text" class="form-control" id="cardCvv">
+                            <div class="col-12 col-sm-8">
+                                <label for="endereco">Endereço</label>
+                                <input type="text" class="form-control" id="endereco">
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="mt-4 mb-5 actions">
-                    <button id="submit" class="btn corBotao btn-lg" onclick="proximoPasso()">Avançar</button>
-                </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-6 col-sm-3">
+                                <label for="cep">Cep</label>
+                                <input type="text" class="form-control" id="cep">
+                            </div>
 
-            </form>
+                            <div class="col-6 col-sm-3">
+                                <label for="estado">Estado</label>
+                                <input type="text" class="form-control" id="estado">
+                            </div>
+
+                            <div class="col-6 col-sm-4">
+                                <label for="cidade">Cidade</label>
+                                <input type="text" class="form-control" id="cidade">
+                            </div>
+
+                            <div class="col-6 col-sm-2">
+                                <label for="numero">Número</label>
+                                <input type="text" class="form-control" id="numero">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-12 col-sm-4">
+                                <label for="nome">Nome</label>
+                                <input type="text" class="form-control" id="nome">
+                            </div>
+
+                            <div class="col-12 col-sm-4">
+                                <label for="numeroCartao">Cartão</label>
+                                <input type="text" class="form-control" id="numeroCartao">
+                            </div>
+
+                            <div class="col-12 col-sm-2">
+                                <label for="dataValidade">Validade</label>
+                                <input type="text" class="form-control" id="dataValidade">
+                            </div>
+
+                            <div class="col-12 col-sm-2">
+                                <label for="cardCvv">CVV</label>
+                                <input type="text" class="form-control" id="cardCvv">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-4 mb-5 actions">
+                        <button id="submit" class="btn corBotao btn-lg" onclick="proximoPasso()">Avançar</button>
+                    </div>
+
+</form>
         </div>
     </body>
 </html>
@@ -108,7 +117,7 @@
     $().ready(function () {
 
         obterInformacoesUrl();
-        obterProdutoPorId(1);
+        //obterProdutoPorId(1);
     });
 
     function mapearObjeto() {
@@ -163,7 +172,7 @@
     function setarDadosProduto(data) {
         $("#descricaoProduto").append(`<label>${data.nome}</label>`);
         $("#precoProduto").append(`<label>${data.preco}</label>`);
-        $("#imagemProduto").append(`<img src=${data.foto} width="200" height="200" />`);
+        $("#imagemProduto").append(`<img src=${data.foto} width="100" height="100" />`);
     }
 
     function obterInformacoesUrl() {
