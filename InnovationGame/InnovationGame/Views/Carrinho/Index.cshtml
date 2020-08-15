@@ -17,16 +17,15 @@
     </head>
 
     <body>
-        <div class="container mt-5">
+        <div>
             <form>
-                <h4>Dados da compra:</h4>
-                <div class="row">
-                    <div class="col-6 col-sm-2">
+                <div class="row" style="height: 135px; background-color: #F7F7F7;">
+                    <div class="col-4 col-sm-2">
                         <div id="imagemProduto" class="text-center mt-3">
-                            <img src="@ViewData["ProdutoFoto"]" />
+                            <img class="prdcss" src="@ViewData["ProdutoFoto"]" style="height: 100px;border: 2px solid #6342A6;height: 100px;border-radius: 26px;" />
                         </div>
                     </div>
-                    <div class="col-6 col-sm-2">
+                    <div class="col-8 col-sm-2">
                         <div id="descricaoProduto" class="text-center mt-3 mb-1">
                             <label>@ViewData["ProdutoNome"]</label>
                         </div>
@@ -35,79 +34,83 @@
                             <label>@ViewData["ProdutoPreco"]</label>
                         </div>
                     </div>
+                    <div class="input-group" style="margin-left: 200px; width: 95px; margin-top: -45px;">
+                        <span class="input-group-btn">
+                            <button type="button" class="btn btn-danger btn-number" data-type="minus" data-field="quant[2]">
+                                <span class="glyphicon glyphicon-minus"></span>
+                            </button>
+                        </span>
+                        <input type="text" name="quant[2]" class="form-control input-number" value="1" min="1" max="100">
+                        <span class="input-group-btn">
+                            <button type="button" class="btn btn-success btn-number" data-type="plus" data-field="quant[2]">
+                                <span class="glyphicon glyphicon-plus"></span>
+                            </button>
+                        </span>
                     </div>
-                    <div class="form-group">
-                        <div class="row">
-                            <div class="col-12 col-sm-2">
-                                <label for="quantidade">Quantidade</label>
-                                <input type="number" class="form-control" id="quantidade">
-                            </div>
+                </div>
+                <div class="form-group" style="margin-top: 40px;">
+                    <div class="row">
+                        <div class="col-12 col-sm-10">
+                            <label for="endereco">Endereço</label>
+                            <input type="text" class="form-control" id="endereco">
+                        </div>
+                        <div class="col-6 col-sm-3">
+                            <label for="numero">Número</label>
+                            <input type="text" class="form-control" id="numero">
+                        </div>
+                        <div class="col-6 col-sm-3">
+                            <label for="cep">Cep</label>
+                            <input type="text" class="form-control" id="cep">
+                        </div>
 
-                            <div class="col-12 col-sm-2">
-                                <label for="celular">Celular</label>
-                                <input type="text" class="form-control" id="celular">
-                            </div>
 
-                            <div class="col-12 col-sm-8">
-                                <label for="endereco">Endereço</label>
-                                <input type="text" class="form-control" id="endereco">
-                            </div>
+                        <div class="col-6 col-sm-3">
+                            <label for="estado">Estado</label>
+                            <input type="text" class="form-control" id="estado">
+                        </div>
+
+                        <div class="col-6 col-sm-3">
+                            <label for="cidade">Cidade</label>
+                            <input type="text" class="form-control" id="cidade">
                         </div>
                     </div>
+                </div>
+                <div class="form-group" style="margin-top: 40px;">
+                    <div class="row">
+                        <div class="col-12 col-sm-4">
+                            <label for="nome">Nome no cartão</label>
+                            <input type="text" class="form-control" id="nome">
+                        </div>
 
-                    <div class="form-group">
-                        <div class="row">
-                            <div class="col-6 col-sm-3">
-                                <label for="cep">Cep</label>
-                                <input type="text" class="form-control" id="cep">
-                            </div>
+                        <div class="col-12 col-sm-4">
+                            <label for="numeroCartao">Numero do cartão</label>
+                            <input type="text" class="form-control" id="numeroCartao">
+                        </div>
 
-                            <div class="col-6 col-sm-3">
-                                <label for="estado">Estado</label>
-                                <input type="text" class="form-control" id="estado">
-                            </div>
+                        <div class="col-6 col-sm-2">
+                            <label for="dataValidade">Validade</label>
+                            <input type="text" class="form-control" id="dataValidade">
+                        </div>
 
-                            <div class="col-6 col-sm-4">
-                                <label for="cidade">Cidade</label>
-                                <input type="text" class="form-control" id="cidade">
-                            </div>
-
-                            <div class="col-6 col-sm-2">
-                                <label for="numero">Número</label>
-                                <input type="text" class="form-control" id="numero">
-                            </div>
+                        <div class="col-6 col-sm-2">
+                            <label for="cardCvv">CVV</label>
+                            <input type="text" class="form-control" id="cardCvv">
                         </div>
                     </div>
-
-                    <div class="form-group">
-                        <div class="row">
-                            <div class="col-12 col-sm-4">
-                                <label for="nome">Nome</label>
-                                <input type="text" class="form-control" id="nome">
-                            </div>
-
-                            <div class="col-12 col-sm-4">
-                                <label for="numeroCartao">Cartão</label>
-                                <input type="text" class="form-control" id="numeroCartao">
-                            </div>
-
-                            <div class="col-12 col-sm-2">
-                                <label for="dataValidade">Validade</label>
-                                <input type="text" class="form-control" id="dataValidade">
-                            </div>
-
-                            <div class="col-12 col-sm-2">
-                                <label for="cardCvv">CVV</label>
-                                <input type="text" class="form-control" id="cardCvv">
-                            </div>
+                </div>
+                <div class="form-group" style="margin-top: 40px;">
+                    <div class="row">
+                        <div class="col-12 col-sm-2">
+                            <label for="celular">Celular</label>
+                            <input type="text" class="form-control" id="celular">
                         </div>
                     </div>
+                </div>
+                <div class="mt-4 mb-5 actions">
+                    <button id="submit" class="btn corBotao btn-lg" onclick="proximoPasso()">Avançar</button>
+                </div>
 
-                    <div class="mt-4 mb-5 actions">
-                        <button id="submit" class="btn corBotao btn-lg" onclick="proximoPasso()">Avançar</button>
-                    </div>
-
-</form>
+            </form>
         </div>
     </body>
 </html>
@@ -139,53 +142,78 @@
         return carrinho;
     }
 
-    function proximoPasso() {
-        var carrinho = mapearObjeto();
-        $.ajax({
-            type: "GET",
-            url: '@Url.Action("Detalhes", "Carrinho")',
-            contentType: "application/json; charset=utf-8",
-            data: JSON.stringify(carrinho),
-            error: function () {
-                alert("Error while inserting data");
-            }
-        });
-    }
 
-    function obterProdutoPorId(id) {
-        $.ajax({
-            type: "GET",
-            url: '@Url.Action("ObterPorId", "Produto")',
-            contentType: "application/json; charset=utf-8",
-            data: { produtoId: id },
-            success: function (data) {
-                if (data != null) {
-                    setarDadosProduto(data);
+    $('.btn-number').click(function (e) {
+        e.preventDefault();
+
+        fieldName = $(this).attr('data-field');
+        type = $(this).attr('data-type');
+        var input = $("input[name='" + fieldName + "']");
+        var currentVal = parseInt(input.val());
+        if (!isNaN(currentVal)) {
+            if (type == 'minus') {
+
+                if (currentVal > input.attr('min')) {
+                    input.val(currentVal - 1).change();
                 }
-            },
-            error: function () {
-                alert("Error while inserting data");
+                if (parseInt(input.val()) == input.attr('min')) {
+                    $(this).attr('disabled', true);
+                }
+
+            } else if (type == 'plus') {
+
+                if (currentVal < input.attr('max')) {
+                    input.val(currentVal + 1).change();
+                }
+                if (parseInt(input.val()) == input.attr('max')) {
+                    $(this).attr('disabled', true);
+                }
+
             }
-        });
-    }
-
-    function setarDadosProduto(data) {
-        $("#descricaoProduto").append(`<label>${data.nome}</label>`);
-        $("#precoProduto").append(`<label>${data.preco}</label>`);
-        $("#imagemProduto").append(`<img src=${data.foto} width="100" height="100" />`);
-    }
-
-    function obterInformacoesUrl() {
-        let parametros = new URLSearchParams(window.location.search);
-
-        if (parametros) {
-            var produtoId = parametros.get('produtoId');
-
-            if (produtoId != null) {
-                obterProdutoPorId(produtoId);
-            }
+        } else {
+            input.val(0);
         }
-    }
+    });
+    $('.input-number').focusin(function () {
+        $(this).data('oldValue', $(this).val());
+    });
+    $('.input-number').change(function () {
+
+        minValue = parseInt($(this).attr('min'));
+        maxValue = parseInt($(this).attr('max'));
+        valueCurrent = parseInt($(this).val());
+
+        name = $(this).attr('name');
+        if (valueCurrent >= minValue) {
+            $(".btn-number[data-type='minus'][data-field='" + name + "']").removeAttr('disabled')
+        } else {
+            alert('Sorry, the minimum value was reached');
+            $(this).val($(this).data('oldValue'));
+        }
+        if (valueCurrent <= maxValue) {
+            $(".btn-number[data-type='plus'][data-field='" + name + "']").removeAttr('disabled')
+        } else {
+            alert('Sorry, the maximum value was reached');
+            $(this).val($(this).data('oldValue'));
+        }
+
+
+    });
+    $(".input-number").keydown(function (e) {
+        // Allow: backspace, delete, tab, escape, enter and .
+        if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 190]) !== -1 ||
+            // Allow: Ctrl+A
+            (e.keyCode == 65 && e.ctrlKey === true) ||
+            // Allow: home, end, left, right
+            (e.keyCode >= 35 && e.keyCode <= 39)) {
+            // let it happen, don't do anything
+            return;
+        }
+        // Ensure that it is a number and stop the keypress
+        if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
+            e.preventDefault();
+        }
+    });
 
 </script>
 
