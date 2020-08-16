@@ -49,200 +49,229 @@
                         </span>
                     </div>
                 </div>
-                <div class="form-group" style="margin-top: 40px;">
+                <div class="form-group" style="margin-top: 15px;padding: 20px; background-color: #F7F7F7; border-radius: 4px; width: 375px; margin-left: -15px;">
                     <div class="row">
                         <div class="col-12 col-sm-10">
                             <label for="endereco">Endereço</label>
-                            <input type="text" class="form-control" id="endereco" name="Endereco" onchange="salvaCampo(this)">
+                            <input type="text" style=" text-transform: uppercase;" class="form-control" id="endereco" name="Endereco" onchange="salvaCampo(this)">
                         </div>
                         <div class="col-6 col-sm-3">
                             <label for="numero">Número</label>
-                            <input type="text" class="form-control" id="numero" name="Numero" onchange="salvaCampo(this)">
+                            <input type="text" style=" text-transform: uppercase;" class="form-control" id="numero" name="Numero" onchange="salvaCampo(this)">
                         </div>
                         <div class="col-6 col-sm-3">
                             <label for="cep">Cep</label>
-                            <input type="text" class="form-control" id="cep" name="CEP" onchange="salvaCampo(this)">
+                            <input type="text" style=" text-transform: uppercase;" class="form-control" id="cep" name="CEP" onchange="salvaCampo(this)">
                         </div>
 
 
                         <div class="col-6 col-sm-3">
                             <label for="estado">Estado</label>
-                            <input type="text" class="form-control" id="estado" name="Estado" onchange="salvaCampo(this)">
-                        </div>
+                            <!--<input type="text" style=" text-transform: uppercase;" class="form-control" id="estado" name="Estado" onchange="salvaCampo(this)">-->
+                                <select id="estado" style="text-transform: uppercase;height: 32px;"name="estado">
+                                    <option value="AC">Acre</option>
+                                    <option value="AL">Alagoas</option>
+                                    <option value="AP">Amapá</option>
+                                    <option value="AM">Amazonas</option>
+                                    <option value="BA">Bahia</option>
+                                    <option value="CE">Ceará</option>
+                                    <option value="DF">Distrito Federal</option>
+                                    <option value="ES">Espírito Santo</option>
+                                    <option value="GO">Goiás</option>
+                                    <option value="MA">Maranhão</option>
+                                    <option value="MT">Mato Grosso</option>
+                                    <option value="MS">Mato Grosso do Sul</option>
+                                    <option value="MG">Minas Gerais</option>
+                                    <option value="PA">Pará</option>
+                                    <option value="PB">Paraíba</option>
+                                    <option value="PR">Paraná</option>
+                                    <option value="PE">Pernambuco</option>
+                                    <option value="PI">Piauí</option>
+                                    <option value="RJ">Rio de Janeiro</option>
+                                    <option value="RN">Rio Grande do Norte</option>
+                                    <option value="RS">Rio Grande do Sul</option>
+                                    <option value="RO">Rondônia</option>
+                                    <option value="RR">Roraima</option>
+                                    <option value="SC">Santa Catarina</option>
+                                    <option value="SP">São Paulo</option>
+                                    <option value="SE">Sergipe</option>
+                                    <option value="TO">Tocantins</option>
+                                </select>
+                            </div>
 
-                        <div class="col-6 col-sm-3">
-                            <label for="cidade">Cidade</label>
-                            <input type="text" class="form-control" id="cidade" name="Cidade" onchange="salvaCampo(this)">
+                            <div class="col-6 col-sm-3">
+                                <label for="cidade">Cidade</label>
+                                <input type="text" style=" text-transform: uppercase;" class="form-control" id="cidade" name="Cidade" onchange="salvaCampo(this)">
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="form-group" style="margin-top: 40px;">
-                    <div class="row">
-                        <div class="col-12 col-sm-4">
-                            <label for="nome">Nome no cartão</label>
-                            <input type="text" class="form-control" id="nome" name="NomeCartao"  onchange="salvaCampo(this)">
-                        </div>
+                    <div class="form-group" style="margin-top: 10px;padding: 20px; background-color: #F7F7F7; border-radius: 4px; width: 375px; margin-left: -15px;">
+                        <div class="row">
+                            <div class="col-12 col-sm-4">
+                                <label for="nome">Nome no cartão</label>
+                                <input type="text" style=" text-transform: uppercase;" class="form-control" id="nome" name="NomeCartao" onchange="salvaCampo(this)">
+                            </div>
 
-                        <div class="col-12 col-sm-4">
-                            <label for="numeroCartao">Numero do cartão</label>
-                            <input type="text" class="form-control" id="numeroCartao" name="CartaoCredito" onchange="salvaCampo(this)">
-                        </div>
+                            <div class="col-12 col-sm-4">
+                                <label for="numeroCartao">Numero do cartão</label>
+                                <input type="text" style=" text-transform: uppercase;" class="form-control" id="numeroCartao" name="CartaoCredito" onchange="salvaCampo(this)">
+                            </div>
 
-                        <div class="col-6 col-sm-2">
-                            <label for="dataValidade">Validade</label>
-                            <input type="text" class="form-control" id="dataValidade" name="CartaoVencimento" onchange="salvaCampo(this)">
-                        </div>
+                            <div class="col-6 col-sm-2">
+                                <label for="dataValidade">Validade</label>
+                                <input type="text" style=" text-transform: uppercase;" class="form-control" id="dataValidade" name="CartaoVencimento" onchange="salvaCampo(this)">
+                            </div>
 
-                        <div class="col-6 col-sm-2">
-                            <label for="cardCvv">CVV</label>
-                            <input type="text" class="form-control" id="cardCvv" name="CartaoCVV">
-                        </div>
-                    </div>
-                </div>
-                <div class="form-group" style="margin-top: 40px;">
-                    <div class="row">
-                        <div class="col-12 col-sm-2">
-                            <label for="celular">Celular</label>
-                            <input type="text" class="form-control" id="celular" name="Celular" onchange="salvaCampo(this)">
+                            <div class="col-6 col-sm-2">
+                                <label for="cardCvv">CVV</label>
+                                <input type="text" style=" text-transform: uppercase;" class="form-control" id="cardCvv" name="CartaoCVV">
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="mt-4 mb-5 actions">
-                    <button id="submit" class="btn corBotao btn-lg" type="submit">Finalizar</button>
-                </div>
+                    <div class="form-group" style="margin-top: 10px;padding: 20px; background-color: #F7F7F7; border-radius: 4px; width: 375px; margin-left: -15px;">
+                        <div class="row">
+                            <div class="col-12 col-sm-2">
+                                <label for="celular">Celular</label>
+                                <input type="text" style=" text-transform: uppercase;" class="form-control" id="celular" name="Celular" onchange="salvaCampo(this)">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-4 mb-5 actions">
+                        <button id="submit" class="btn corBotao btn-lg" type="submit">Finalizar</button>
+                    </div>
 
-            </form>
-        </div>
-    </body>
-</html>
+                </form>
+            </div>
+        </body>
+    </html>
 
-<script type="text/javascript">
+    <script type="text/javascript">
 
-    function salvaCampo(campo) {
-        console.log(campo.name + ":" + campo.value);
-        localStorage[campo.name] = campo.value;
-    }
-
-    $(function () {
-        $("#endereco").val(localStorage["Endereco"])
-        $("#numero").val(localStorage["Numero"])
-        $("#cep").val(localStorage["CEP"])
-        $("#cidade").val(localStorage["Cidade"])
-        $("#estado").val(localStorage["Estado"])
-        $("#nome").val(localStorage["NomeCartao"])
-        $("#numeroCartao").val(localStorage["CartaoCredito"])
-        $("#dataValidade").val(localStorage["CartaoVencimento"])
-        $("#celular").val(localStorage["Celular"])
-    })
-
-    $('.btn-number').click(function (e) {
-        e.preventDefault();
-
-        fieldName = $(this).attr('data-field');
-        type = $(this).attr('data-type');
-        var input = $("input[name='" + fieldName + "']");
-        var currentVal = parseInt(input.val());
-        if (!isNaN(currentVal)) {
-            if (type == 'minus') {
-
-                if (currentVal > input.attr('min')) {
-                    input.val(currentVal - 1).change();
-
-                    var quantidadeProduto = document.getElementById('qtde').value;
-                    var valorProduto = document.getElementById('valor').textContent;
-                    var valorProdutoUnitario = "";
-                    var valorTotal = "";
-
-
-                    var quantidadeProduto = document.getElementById('qtde').value;
-                    var valorProduto = document.getElementById('valor').textContent;
-                    var valorProdutoUnitario = "";
-                    var valorTotal = "";
-
-                    if (quantidadeProduto == 1) {
-                        valorProdutoUnitario = valorProduto / 2;
-                        valorTotal = valorProdutoUnitario;
-                        var arredondado = parseFloat(valorTotal.toFixed(2));
-                        document.getElementById('valor').innerHTML = arredondado;
-                    }
-                    if (quantidadeProduto > 1) {
-                        valorProdutoUnitario = valorProduto / (quantidadeProduto + 1);
-                        alert(valorProdutoUnitario);
-                        valorTotal = valorProdutoUnitario * quantidadeProduto;
-                        var arredondado = parseFloat(valorTotal.toFixed(2));
-                        document.getElementById('valor').innerHTML = arredondado;
-                    }
-                }
-
-            } else if (type == 'plus') {
-
-                if (currentVal < input.attr('max')) {
-                    input.val(currentVal + 1).change();
-
-                    var quantidadeProduto = document.getElementById('qtde').value;
-                    var valorProduto = document.getElementById('valor').textContent;
-                    var valorProdutoUnitario = "";
-                    var valorTotal = "";
-
-                    if (quantidadeProduto > 1) {
-                        valorProdutoUnitario = valorProduto / (quantidadeProduto - 1);
-                        valorTotal = valorProdutoUnitario * quantidadeProduto;
-                        var arredondado = parseFloat(valorTotal.toFixed(2));
-                        document.getElementById('valor').innerHTML = arredondado;
-                    }
-
-                }
-                if (parseInt(input.val()) == input.attr('max')) {
-                    $(this).attr('disabled', true);
-                }
-
-            }
-        } else {
-            input.val(0);
-        }
-    });
-
-    $('.input-number').focusin(function () {
-        $(this).data('oldValue', $(this).val());
-    });
-
-    $('.input-number').change(function () {
-
-        minValue = parseInt($(this).attr('min'));
-        maxValue = parseInt($(this).attr('max'));
-        valueCurrent = parseInt($(this).val());
-
-        name = $(this).attr('name');
-        if (valueCurrent >= minValue) {
-            $(".btn-number[data-type='minus'][data-field='" + name + "']").removeAttr('disabled')
-        } else {
-            alert('Sorry, the minimum value was reached');
-            $(this).val($(this).data('oldValue'));
-        }
-        if (valueCurrent <= maxValue) {
-            $(".btn-number[data-type='plus'][data-field='" + name + "']").removeAttr('disabled')
-        } else {
-            alert('Sorry, the maximum value was reached');
-            $(this).val($(this).data('oldValue'));
+        function salvaCampo(campo) {
+            console.log(campo.name + ":" + campo.value);
+            localStorage[campo.name] = campo.value;
         }
 
-    });
+        $(function () {
+            $("#endereco").val(localStorage["Endereco"])
+            $("#numero").val(localStorage["Numero"])
+            $("#cep").val(localStorage["CEP"])
+            $("#cidade").val(localStorage["Cidade"])
+            $("#estado").val(localStorage["Estado"])
+            $("#nome").val(localStorage["NomeCartao"])
+            $("#numeroCartao").val(localStorage["CartaoCredito"])
+            $("#dataValidade").val(localStorage["CartaoVencimento"])
+            $("#celular").val(localStorage["Celular"])
+        })
 
-    $(".input-number").keydown(function (e) {
-        // Allow: backspace, delete, tab, escape, enter and .
-        if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 190]) !== -1 ||
-            // Allow: Ctrl+A
-            (e.keyCode == 65 && e.ctrlKey === true) ||
-            // Allow: home, end, left, right
-            (e.keyCode >= 35 && e.keyCode <= 39)) {
-            // let it happen, don't do anything
-            return;
-        }
-        // Ensure that it is a number and stop the keypress
-        if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
+        $('.btn-number').click(function (e) {
             e.preventDefault();
-        }
-    });
 
-</script>
+            fieldName = $(this).attr('data-field');
+            type = $(this).attr('data-type');
+            var input = $("input[name='" + fieldName + "']");
+            var currentVal = parseInt(input.val());
+            if (!isNaN(currentVal)) {
+                if (type == 'minus') {
+
+                    if (currentVal > input.attr('min')) {
+                        input.val(currentVal - 1).change();
+
+                        var quantidadeProduto = document.getElementById('qtde').value;
+                        var valorProduto = document.getElementById('valor').textContent;
+                        var valorProdutoUnitario = "";
+                        var valorTotal = "";
+
+
+                        var quantidadeProduto = document.getElementById('qtde').value;
+                        var valorProduto = document.getElementById('valor').textContent;
+                        var valorProdutoUnitario = "";
+                        var valorTotal = "";
+
+                        if (quantidadeProduto == 1) {
+                            valorProdutoUnitario = valorProduto / 2;
+                            valorTotal = valorProdutoUnitario;
+                            var arredondado = parseFloat(valorTotal.toFixed(2));
+                            document.getElementById('valor').innerHTML = arredondado;
+                        }
+                        if (quantidadeProduto > 1) {
+                            var qtdeProduto = parseFloat(quantidadeProduto) + 1;
+                            valorProdutoUnitario = valorProduto / qtdeProduto;
+                            valorTotal = valorProdutoUnitario * (parseFloat(quantidadeProduto));
+                            var arredondado = parseFloat(valorTotal.toFixed(2));
+                            document.getElementById('valor').innerHTML = arredondado;
+                        }
+                    }
+
+                } else if (type == 'plus') {
+
+                    if (currentVal < input.attr('max')) {
+                        input.val(currentVal + 1).change();
+
+                        var quantidadeProduto = document.getElementById('qtde').value;
+                        var valorProduto = document.getElementById('valor').textContent;
+                        var valorProdutoUnitario = "";
+                        var valorTotal = "";
+
+                        if (quantidadeProduto > 1) {
+                            valorProdutoUnitario = valorProduto / (quantidadeProduto - 1);
+                            valorTotal = valorProdutoUnitario * quantidadeProduto;
+                            var arredondado = parseFloat(valorTotal.toFixed(2));
+                            document.getElementById('valor').innerHTML = arredondado;
+                        }
+
+                    }
+                    if (parseInt(input.val()) == input.attr('max')) {
+                        $(this).attr('disabled', true);
+                    }
+
+                }
+            } else {
+                input.val(0);
+            }
+        });
+
+        $('.input-number').focusin(function () {
+            $(this).data('oldValue', $(this).val());
+        });
+
+        $('.input-number').change(function () {
+
+            minValue = parseInt($(this).attr('min'));
+            maxValue = parseInt($(this).attr('max'));
+            valueCurrent = parseInt($(this).val());
+
+            name = $(this).attr('name');
+            if (valueCurrent >= minValue) {
+                $(".btn-number[data-type='minus'][data-field='" + name + "']").removeAttr('disabled')
+            } else {
+                alert('Sorry, the minimum value was reached');
+                $(this).val($(this).data('oldValue'));
+            }
+            if (valueCurrent <= maxValue) {
+                $(".btn-number[data-type='plus'][data-field='" + name + "']").removeAttr('disabled')
+            } else {
+                alert('Sorry, the maximum value was reached');
+                $(this).val($(this).data('oldValue'));
+            }
+
+        });
+
+        $(".input-number").keydown(function (e) {
+            // Allow: backspace, delete, tab, escape, enter and .
+            if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 190]) !== -1 ||
+                // Allow: Ctrl+A
+                (e.keyCode == 65 && e.ctrlKey === true) ||
+                // Allow: home, end, left, right
+                (e.keyCode >= 35 && e.keyCode <= 39)) {
+                // let it happen, don't do anything
+                return;
+            }
+            // Ensure that it is a number and stop the keypress
+            if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
+                e.preventDefault();
+            }
+        });
+
+    </script>
 
