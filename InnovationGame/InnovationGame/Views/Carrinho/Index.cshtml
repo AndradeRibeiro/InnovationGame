@@ -32,16 +32,16 @@
                         </div>
 
                         <div id="precoProduto" class="text-center mb-4">
-                            <label>@ViewData["ProdutoPreco"]</label>
+                            <label id="valor">@ViewData["ProdutoPreco"]</label>
                         </div>
                     </div>
-                    <div class="input-group" style="margin-left: 200px; width: 95px; margin-top: -45px;">
+                    <div class="input-group" style="margin-left: 200px; width: 100px; margin-top: -45px;">
                         <span class="input-group-btn">
                             <button type="button" class="btn btn-danger btn-number" data-type="minus" data-field="quant[2]">
                                 <span class="glyphicon glyphicon-minus" style="font-weight: bolder">-</span>
                             </button>
                         </span>
-                        <input type="text" name="quant[2]" class="form-control input-number" value="1" min="1" max="100">
+                        <input id="qtde" type="text" name="quant[2]" class="form-control input-number" value="1" min="1" max="100">
                         <span class="input-group-btn">
                             <button type="button" class="btn btn-success btn-number" data-type="plus" data-field="quant[2]">
                                 <span class="glyphicon glyphicon-plus" style="font-weight: bolder">+</span>
@@ -147,15 +147,50 @@
 
                 if (currentVal > input.attr('min')) {
                     input.val(currentVal - 1).change();
-                }
-                if (parseInt(input.val()) == input.attr('min')) {
-                    $(this).attr('disabled', true);
+
+                    var quantidadeProduto = document.getElementById('qtde').value;
+                    var valorProduto = document.getElementById('valor').textContent;
+                    var valorProdutoUnitario = "";
+                    var valorTotal = "";
+
+
+                    var quantidadeProduto = document.getElementById('qtde').value;
+                    var valorProduto = document.getElementById('valor').textContent;
+                    var valorProdutoUnitario = "";
+                    var valorTotal = "";
+
+                    if (quantidadeProduto == 1) {
+                        valorProdutoUnitario = valorProduto / 2;
+                        valorTotal = valorProdutoUnitario;
+                        var arredondado = parseFloat(valorTotal.toFixed(2));
+                        document.getElementById('valor').innerHTML = arredondado;
+                    }
+                    if (quantidadeProduto > 1) {
+                        valorProdutoUnitario = valorProduto / (quantidadeProduto + 1);
+                        alert(valorProdutoUnitario);
+                        valorTotal = valorProdutoUnitario * quantidadeProduto;
+                        var arredondado = parseFloat(valorTotal.toFixed(2));
+                        document.getElementById('valor').innerHTML = arredondado;
+                    }
                 }
 
             } else if (type == 'plus') {
 
                 if (currentVal < input.attr('max')) {
                     input.val(currentVal + 1).change();
+
+                    var quantidadeProduto = document.getElementById('qtde').value;
+                    var valorProduto = document.getElementById('valor').textContent;
+                    var valorProdutoUnitario = "";
+                    var valorTotal = "";
+
+                    if (quantidadeProduto > 1) {
+                        valorProdutoUnitario = valorProduto / (quantidadeProduto - 1);
+                        valorTotal = valorProdutoUnitario * quantidadeProduto;
+                        var arredondado = parseFloat(valorTotal.toFixed(2));
+                        document.getElementById('valor').innerHTML = arredondado;
+                    }
+
                 }
                 if (parseInt(input.val()) == input.attr('max')) {
                     $(this).attr('disabled', true);
