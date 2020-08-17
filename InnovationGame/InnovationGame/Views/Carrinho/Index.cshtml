@@ -2,19 +2,20 @@
     ViewData["Title"] = "Carrinho";
 }
 <html>
-    <head>
-        <style>
-            .actions {
-                display: flex;
-                justify-content: flex-end;
-            }
-            .corBotao {
-                background-color: #6342a6;
-                color: white;
-                border-color: #6342a6;
-            }
-        </style>
-    </head>
+<head>
+    <style>
+        .actions {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .corBotao {
+            background-color: #6342a6;
+            color: white;
+            border-color: #6342a6;
+        }
+    </style>
+</head>
 
     <body>
         <div>
@@ -28,6 +29,7 @@
                     </div>
                     <div class="col-8 col-sm-2">
                         <div id="descricaoProduto" class="text-center mt-3 mb-1">
+                            <label>@ViewData["ProdutoNome"]</label>
                             <label>@ViewData["ProdutoNome"]</label>
                         </div>
 
@@ -147,8 +149,13 @@
 
     <script type="text/javascript">
 
+        $(document).ready(function () {
+            $("#celular").mask('(00) 00000-0000');
+            $("#cep").mask('00000-000');
+            $("#dataValidade").mask('00/00');
+        });
+
         function salvaCampo(campo) {
-            console.log(campo.name + ":" + campo.value);
             localStorage[campo.name] = campo.value;
         }
 
